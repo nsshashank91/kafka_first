@@ -22,4 +22,8 @@ https://github.com/simplesteph/kafka-stack-docker-compose
 
 https://stackoverflow.com/questions/53077994/kafka-topic-creation-faling-when-3-brokers-are-up-out-of-4-in-a-cluster
 
+docker run --net=host --rm confluentinc/cp-kafka kafka-topics --create --topic product --partitions 3 --replication-factor 3 --if-not-exists --zookeeper localhost:32181
 
+docker run --net=host --rm confluentinc/cp-kafka kafka-topics --list --topic product --zookeeper localhost:32181
+
+docker run --net=host --rm confluentinc/cp-kafka kafka-topics --describe --topic product --zookeeper localhost:32181
