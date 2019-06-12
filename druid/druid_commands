@@ -1,0 +1,9 @@
+docker run -p 2181:2181 -p 8081-8110:8081-8110 -p 8200:8200 -p 8888:8888 -p 9095:9095 -d --name imply imply/imply
+
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic product --from-beginning
+
+192.168.225.60
+
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic light
+
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092 
